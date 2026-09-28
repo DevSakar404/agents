@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: digital-twin
+    runtime: python
+    plan: free
+    rootDir: 1_foundations/twin
+    buildCommand: pip install -r requirements.txt
+    startCommand: python app.py
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.0
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: PUSHOVER_USER
+        sync: false
+      - key: PUSHOVER_TOKEN
+        sync: false
